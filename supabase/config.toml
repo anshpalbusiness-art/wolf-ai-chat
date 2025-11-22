@@ -1,1 +1,4 @@
 project_id = "gufjvrneertflvragvgn"
+
+[functions.chat-stream]
+verify_jwt = true

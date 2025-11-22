@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        wolf: {
+          blue: "hsl(var(--wolf-blue))",
+          "blue-hover": "hsl(var(--wolf-blue-hover))",
+          gray: "hsl(var(--wolf-gray))",
+          "gray-light": "hsl(var(--wolf-gray-light))",
+        },
+        chat: {
+          user: "hsl(var(--chat-user-bg))",
+          assistant: "hsl(var(--chat-assistant-bg))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
