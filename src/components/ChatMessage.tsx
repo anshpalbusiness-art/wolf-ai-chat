@@ -15,8 +15,8 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
       <div className="flex-shrink-0">
         <div
           className={cn(
-            'h-8 w-8 rounded-full flex items-center justify-center',
-            isUser ? 'bg-primary' : 'bg-wolf-gray'
+            'h-8 w-8 rounded-full flex items-center justify-center border',
+            isUser ? 'bg-primary border-primary' : 'bg-wolf-gray border-border'
           )}
         >
           {isUser ? (
