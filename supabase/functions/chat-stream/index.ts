@@ -45,11 +45,15 @@ serve(async (req) => {
       const errorText = await response.text();
       console.error('xAI API error:', response.status, errorText);
       return new Response(
-        JSON.stringify({ error: 'Failed to get response from AI' }), 
-        { 
+        JSON.stringify({
+          error: 'Failed to get response from AI',
+          details: errorText,
           status: response.status,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-        }
+        }),
+        {
+          status: response.status,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        },
       );
     }
 
