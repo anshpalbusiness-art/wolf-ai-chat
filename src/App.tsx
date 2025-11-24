@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Chat from "./pages/Chat";
 import Auth from "./pages/Auth";
 import PatternPuzzle from "./pages/PatternPuzzle";
 import NotFound from "./pages/NotFound";
@@ -17,8 +16,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/chat" replace />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/" element={<Navigate to="/puzzle" replace />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/puzzle" element={<PatternPuzzle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
