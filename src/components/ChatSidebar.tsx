@@ -1,9 +1,10 @@
-import { Plus, History, Settings, HelpCircle, LogOut, Trash2, Menu } from 'lucide-react';
+import { Plus, History, Settings, HelpCircle, LogOut, Trash2, Menu, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Chat } from '@/hooks/useChat';
 import { cn } from '@/lib/utils';
+import { useNavigate } from 'react-router-dom';
 
 interface ChatSidebarProps {
   chats: Chat[];
@@ -28,6 +29,8 @@ export const ChatSidebar = ({
   isOpen,
   onToggle,
 }: ChatSidebarProps) => {
+  const navigate = useNavigate();
+  
   return (
     <>
       {/* Mobile overlay */}
@@ -60,13 +63,21 @@ export const ChatSidebar = ({
         </div>
 
         {/* New Chat Button */}
-        <div className="p-4">
+        <div className="p-4 space-y-2">
           <Button
             onClick={onNewChat}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
           >
             <Plus className="mr-2 h-4 w-4" />
             New Chat
+          </Button>
+          <Button
+            onClick={() => navigate('/puzzle')}
+            variant="outline"
+            className="w-full"
+          >
+            <Brain className="mr-2 h-4 w-4" />
+            Pattern Puzzle
           </Button>
         </div>
 
